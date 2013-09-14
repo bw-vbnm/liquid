@@ -201,7 +201,8 @@ SERVE_STATIC = True
 #AD_DEBUG_FILE='/path/to/writable/log/file/ldap.debug'
 #AUTHENTICATION_BACKENDS = ('utils.ldapauth.ActiveDirectoryGroupMembershipSSLBackend',
 #                           'django.contrib.auth.backends.ModelBackend','crowd.backends.CrowdBackend')
-AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend','crowd.backends.CrowdBackend')
+#AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend','utils.crowdauth.ActiveDirectoryGroupMembershipSSLBackend')
+AUTHENTICATION_BACKENDS = ('utils.crowdauth.ActiveDirectoryGroupMembershipSSLBackend',)
 
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',

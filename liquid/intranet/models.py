@@ -76,7 +76,7 @@ def new_member(sender, **kwargs):
    logging.debug('user: %s' % user)
    logging.debug('username: %s' % user.username)
    if not user.id:
-      l = ldap.initialize('ldap://ldap.uiuc.edu')
+      l = ldap.initialize('ldap://ldap-campus.uiuc.edu')
       u = l.search_s('ou=people,dc=uiuc,dc=edu',ldap.SCOPE_SUBTREE,'uid=%s'%user.username)
       try:
          user.last_name = u[0][1]['sn'][0]
@@ -256,7 +256,7 @@ def new_resume_person(sender, **kwargs):
    person = kwargs['instance']
    person.netid = person.netid.lower()
    if not person.id:
-      l = ldap.initialize('ldap://ldap.uiuc.edu')
+      l = ldap.initialize('ldap://ldap-campus.uiuc.edu')
       u = l.search_s('ou=people,dc=uiuc,dc=edu',ldap.SCOPE_SUBTREE,'uid=%s'%person.netid)
       try:
          person.ldap_name = u[0][1]['cn'][0]
