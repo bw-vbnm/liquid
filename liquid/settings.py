@@ -199,8 +199,9 @@ SERVE_STATIC = True
 #AD_CERT_FILE='/path/to/your/cert.txt'
 #AD_DEBUG=True
 #AD_DEBUG_FILE='/path/to/writable/log/file/ldap.debug'
-AUTHENTICATION_BACKENDS = ('utils.ldapauth.ActiveDirectoryGroupMembershipSSLBackend',
-                           'django.contrib.auth.backends.ModelBackend','crowd.CrowdBackend')
+#AUTHENTICATION_BACKENDS = ('utils.ldapauth.ActiveDirectoryGroupMembershipSSLBackend',
+#                           'django.contrib.auth.backends.ModelBackend','crowd.backends.CrowdBackend')
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend','crowd.backends.CrowdBackend')
 
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
@@ -253,7 +254,7 @@ AD_DEBUG_FILE='/var/log/apache2/ldap.debug'
 # CROWD
 CROWD = {
 
-    'url': 'http:/zuul.acm.uiuc.edu:8095/crowd/rest',
+    'url': 'http://zuul.acm.uiuc.edu:8095/crowd/rest',
 
     'app_name': 'liquid',
 
