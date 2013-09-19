@@ -100,7 +100,7 @@ STATICFILES_FINDERS = (
 SECRET_KEY = '-1z=(%v80hj+b087v^f_ca60l1uk^1a4g7woj8u-juthol8=x7'
 
 # List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
+TEMPLATE_LOADER = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
@@ -202,8 +202,8 @@ SERVE_STATIC = True
 #AUTHENTICATION_BACKENDS = ('utils.ldapauth.ActiveDirectoryGroupMembershipSSLBackend',
 #                           'django.contrib.auth.backends.ModelBackend','crowd.backends.CrowdBackend')
 #AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend','utils.crowdauth.ActiveDirectoryGroupMembershipSSLBackend')
-AUTHENTICATION_BACKENDS = ('utils.crowdauth.ActiveDirectoryGroupMembershipSSLBackend',)
-
+#AUTHENTICATION_BACKENDS = ('utils.crowdauth.ActiveDirectoryGroupMembershipSSLBackend',)
+AUTHENTICATION_BACKENDS = ('crowd.backends.CrowdBackend',)
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
